@@ -2,11 +2,21 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:weightSum="1">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="316dp">
+        android:layout_height="316dp"
+        android:layout_weight="0.32">
+
+        <ImageButton
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            app:srcCompat="@android:drawable/btn_star_big_on"
+            android:id="@+id/imageButton3"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp" />
 
         <ImageButton
             android:layout_width="150dp"
@@ -15,17 +25,17 @@
             app:srcCompat="?attr/selectableItemBackground"
             android:id="@+id/ownerImage"
             android:elevation="1dp"
-            android:layout_marginLeft="200dp"
-            android:layout_marginTop="150dp" />
+            android:layout_marginLeft="175dp"
+            android:layout_marginTop="170dp" />
 
         <ImageButton
             app:srcCompat="?attr/selectableItemBackground"
             android:id="@+id/dogImage"
             android:layout_width="250dp"
             android:layout_height="250dp"
-            android:layout_marginLeft="65dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginLeft="55dp"
+            android:layout_marginRight="50dp"
+            android:layout_marginTop="50dp" />
 
     </RelativeLayout>
 
