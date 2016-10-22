@@ -11,7 +11,7 @@ import android.os.Bundle;
 
 public class HomePage extends AppCompatActivity {
 
-    ViewPager viewPager;
+    private ViewPager viewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
