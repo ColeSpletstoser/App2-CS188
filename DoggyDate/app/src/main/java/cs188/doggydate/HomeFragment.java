@@ -1,5 +1,6 @@
 package cs188.doggydate;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -22,11 +23,15 @@ public class HomeFragment extends Fragment {
 
         View layout = inflater.inflate(R.layout.home_fragment, container, false);
 
-        dogImageButton = (ImageButton) layout.findViewById(R.id.dogImageButton);
+        ImageButton dogImageButton = (ImageButton) layout.findViewById(R.id.dogImageButton);
+
         dogImageButton.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-                //Do what you want to do when button is clicked
+
+                Intent intent = new Intent(getActivity(), DescriptionActivity.class);
+                startActivity(intent);
             }
         });
 
