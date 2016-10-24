@@ -9,29 +9,31 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+
 /**
  * Created by Spletz on 10/20/16.
  */
 public class LogInFragment extends Fragment {
+
+    private Button create_button;
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.login_fragment, container, false);
-    }
 
-    private Button create_button;
-/*
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.login_fragment);
+        View layout = inflater.inflate(R.layout.login_fragment, container, false);
 
-        create_button = (Button) findViewById(R.id.create_account_button);
+        Button create_button = (Button) layout.findViewById(R.id.create_account_button);
 
         create_button.setOnClickListener(new View.OnClickListener() {
+
+            @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LogInFragment.this, CreateAccountActivity.class);
+
+                Intent intent = new Intent(getActivity(), CreateAccountActivity.class);
                 startActivity(intent);
             }
         });
-    }*/
-}
+
+    return layout;
+}}}
