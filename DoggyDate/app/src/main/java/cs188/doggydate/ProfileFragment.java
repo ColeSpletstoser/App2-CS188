@@ -9,7 +9,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
+import static cs188.doggydate.R.layout.profile_fragment;
 
 /**
  * Created by Spletz on 10/20/16.
@@ -17,26 +18,23 @@ import android.widget.Toast;
  */
 
 
-public class ProfileFragment extends Fragment implements View.OnClickListener {
-
-    ImageButton btn;
+public class ProfileFragment extends Fragment  {
 
     @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
-    {
-        View view = inflater.inflate(R.layout.profile_fragment, container, false);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+        View view = inflater.inflate(profile_fragment, container, false);
 
-        btn = (ImageButton) view.findViewById(R.id.settingsButton);
-        btn.setOnClickListener(this);
+        ImageButton btn1 = (ImageButton) view.findViewById(R.id.settingsButton);
 
-        return view;
-    }
+        btn1.setOnClickListener(new View.OnClickListener() {
 
-    @Override
-    public void onClick(View v)
-    {
-//        Intent myIntent = new Intent(ProfileFragment.this, SettingsActivity.class);
-//        //myIntent.putExtra("key", value); //Optional parameters
-//        ProfileFragment.this.startActivity(myIntent);
-   }
-}
+            @Override
+            public void onClick(View v) {
+
+                Intent intent = new Intent(getActivity(), SettingsActivity.class);
+                startActivity(intent);
+
+            }
+        });
+
+        return view;}}
