@@ -13,7 +13,7 @@ public class CreateAccountActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_account);
 
-        create_button = (Button) findViewById(R.id.button);
+        create_button = (Button) findViewById(R.id.create_button);
 
         create_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

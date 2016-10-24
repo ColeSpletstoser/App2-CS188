@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_settings"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="cs188.doggydate.SettingsActivity">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:padding="20dp">
+
+        <TextView
+            android:text="User Settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/settingsHeader"
+            android:textAlignment="center"
+            android:textSize="32dp" />
+
+        <TextView
+            android:text="Dog Name and Age:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dogNameHeader"
+            android:layout_marginTop="10dp"
+            android:editable="false" />
+
+        <TextView
+            android:text="Enter dog name here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enterDogName"/>
+
+        <TextView
+            android:text="Dog Gender:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dogGenderHeader"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:text="Enter Dog Gender Here"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enterDogGender" />
+
+        <TextView
+            android:text="Spayed/Neutered:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/spayedNeutered"
+            android:layout_marginTop="10dp" />
+
+        <TextView
+            android:text="Is your dog spayed or neutered?"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enterSpayedNeutered" />
+
+        <TextView
+            android:text="Dog Disposition:"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/dogDispositionHeader"
+            android:layout_marginTop="10dp"/>
+
+        <TextView
+            android:text="Enter your dog's disposition"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/enterDogDisposition" />
+
+        <!--<TextView-->
+            <!--android:text="Dog Disposition:"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/dogDispositionHeader"-->
+            <!--android:layout_marginTop="10dp"/>-->
+
+        <!--<TextView-->
+            <!--android:text="Enter your dog's disposition"-->
+            <!--android:layout_width="match_parent"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/enterDogDisposition" />-->
+
+        <Button
+            android:text="Save Changes"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/saveChanges"
+            android:layout_marginTop="10dp" />
+    </LinearLayout>
+</RelativeLayout>

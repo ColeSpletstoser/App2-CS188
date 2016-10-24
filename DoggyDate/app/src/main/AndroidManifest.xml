@@ -17,6 +17,8 @@
         </activity>
         <activity android:name=".CreateAccountActivity" />
         <activity android:name=".CreateProfileActivity"></activity>
+        <activity android:name=".SettingsActivity" />
+        <activity android:name=".DescriptionActivity"></activity>
     </application>
 
 </manifest>

@@ -25,7 +25,7 @@ public class LogInFragment extends Fragment {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_fragment);
 
-        create_button = (Button) findViewById(R.id.button);
+        create_button = (Button) findViewById(R.id.create_account_button);
 
         create_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

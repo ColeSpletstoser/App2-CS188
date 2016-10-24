@@ -1,6 +1,7 @@
 package cs188.doggydate;
 
 import android.content.Context;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
@@ -11,15 +12,25 @@ import android.os.Bundle;
 
 public class HomePage extends AppCompatActivity {
 
-    ViewPager viewPager;
+    private ViewPager viewPager;
+    private TabLayout tabLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
+
         viewPager = (ViewPager) findViewById(R.id.viewPager);
-        viewPager.setAdapter(new CustomAdapter(getSupportFragmentManager(), getApplicationContext()));
+        viewPager.setAdapter(adapter);
+
+        tabLayout = (TabLayout) findViewById(R.id.tabLayout);
+        tabLayout.setupWithViewPager(viewPager);
+
+        viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
+
+        tabLayout.setTabsFromPagerAdapter(adapter);
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {
@@ -46,7 +57,25 @@ public class HomePage extends AppCompatActivity {
 
         @Override
         public int getCount() {
-            return 2;
+            return 3;
+        }
+
+        @Override
+        public CharSequence getPageTitle(int position) {
+            String title=" ";
+            switch (position){
+                case 0:
+                    title="Profile";
+                    break;
+                case 1:
+                    title="Home";
+                    break;
+                case 2:
+                    title="Inbox";
+                    break;
+            }
+
+            return title;
         }
     }
 }

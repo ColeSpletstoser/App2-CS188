@@ -13,7 +13,7 @@ public class CreateProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_create_profile);
 
-        finished_button = (Button) findViewById(R.id.button);
+        finished_button = (Button) findViewById(R.id.finished_button);
 
         finished_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
