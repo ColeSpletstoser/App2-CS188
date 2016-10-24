@@ -9,7 +9,8 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="316dp"
-        android:layout_weight="0.43">
+        android:layout_weight="0.43"
+        android:layout_marginTop="55dp">
 
 
         <ImageButton
@@ -19,7 +20,6 @@
             android:layout_height="350dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
-            android:layout_marginTop="55dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true" />
 
