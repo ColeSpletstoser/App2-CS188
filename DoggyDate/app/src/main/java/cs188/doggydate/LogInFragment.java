@@ -36,4 +36,5 @@ public class LogInFragment extends Fragment {
         });
 
     return layout;
-}}}
+    }
+}
