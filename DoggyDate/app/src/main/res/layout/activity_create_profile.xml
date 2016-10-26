@@ -10,12 +10,70 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cs188.doggydate.CreateProfileActivity">
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Dog Name"
+        android:ems="10"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="53dp"
+        android:id="@+id/dog_name" />
+
     <Button
         android:text="Done"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="25dp"
+        android:id="@+id/finished_button"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="58dp"
-        android:id="@+id/finished_button" />
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:text="Upload Owner Photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/owner_photo_upload"
+        android:layout_marginBottom="15dp"
+        android:layout_above="@+id/finished_button"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Owner Name"
+        android:ems="10"
+        android:id="@+id/owner_name"
+        android:layout_centerVertical="true"
+        android:layout_alignStart="@+id/dog_name" />
+
+    <Button
+        android:text="Upload Dog Photo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dog_photo_upload"
+        android:layout_above="@+id/owner_name"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/dog_name"
+        android:id="@+id/dog_info"
+        android:text="Dog Description" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:layout_below="@+id/owner_name"
+        android:id="@+id/owner_info"
+        android:text="Owner Description"
+        android:layout_alignParentEnd="true" />
+
 </RelativeLayout>

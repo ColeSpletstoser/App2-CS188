@@ -42,7 +42,7 @@ public class HomePage extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position){
                 case 0:
-                    if(true) //change to check for if the user has an account
+                    if(false) //change to check for if the user has an account
                         return new ProfileFragment();
                     else
                         return new LogInFragment();
