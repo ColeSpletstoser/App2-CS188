@@ -40,9 +40,9 @@ public class HomeFragment extends Fragment {
             }
         });
 
-        double[] userLocation = ((HomePage) getActivity()).userLocation;
-        nameTextView.append(" " + userLocation[0]);
-        nameTextView.append(" " + userLocation[1]);
+        double[] phoneLocation = ((HomePage) getActivity()).userLocation;
+        nameTextView.append(" " + phoneLocation[0]);
+        nameTextView.append(" " + phoneLocation[1]);
 
         return layout;
     }
