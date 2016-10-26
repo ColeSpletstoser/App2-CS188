@@ -25,6 +25,7 @@ public class HomePage extends AppCompatActivity {
 
     private ViewPager viewPager;
     private TabLayout tabLayout;
+    private TextView locationTextView;
 
     private LocationManager locationManager;
     private LocationListener locationListener;
@@ -48,12 +49,16 @@ public class HomePage extends AppCompatActivity {
 
         tabLayout.setTabsFromPagerAdapter(adapter);
 
+        locationTextView = (TextView) findViewById(R.id.locationTextView);
+
         locationManager = (LocationManager) getSystemService(LOCATION_SERVICE);
         locationListener = new LocationListener() {
             @Override
             public void onLocationChanged(Location location) {
                 userLocation[0] = location.getLatitude();
                 userLocation[1] = location.getLongitude();
+                locationTextView.append(" " + userLocation[0]);
+                locationTextView.append(" " + userLocation[1]);
             }
 
             @Override
