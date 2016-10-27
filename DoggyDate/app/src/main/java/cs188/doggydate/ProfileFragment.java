@@ -31,7 +31,7 @@ public class ProfileFragment extends Fragment  {
             @Override
             public void onClick(View v) {
 
-                Intent intent = new Intent(getActivity(), SettingsActivity.class);
+                Intent intent = new Intent(getActivity(), PreferencesActivity.class);
                 startActivity(intent);
 
             }
