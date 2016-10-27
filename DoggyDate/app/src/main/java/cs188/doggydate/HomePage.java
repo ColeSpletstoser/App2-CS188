@@ -20,6 +20,7 @@ import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -54,8 +55,11 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
         tabLayout.setTabsFromPagerAdapter(adapter);
 
+        Log.v("hi", "hi");
+
         // Create an instance of GoogleAPIClient.
         if (mGoogleApiClient == null) {
+            Log.v("hi", "hi2");
             mGoogleApiClient = new GoogleApiClient.Builder(this)
                     .addConnectionCallbacks(this)
                     .addOnConnectionFailedListener(this)
@@ -78,6 +82,11 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
     @Override
     public void onConnected(@Nullable Bundle bundle) {
+
+        Log.v("hi", "hi3");
+
+        Toast.makeText(this, "HI", Toast.LENGTH_SHORT).show();
+
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
             // TODO: Consider calling
             //    ActivityCompat#requestPermissions
@@ -108,7 +117,7 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-
+        Log.v("hi", "failed");
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {
