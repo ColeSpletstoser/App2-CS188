@@ -20,9 +20,12 @@
             </intent-filter>
         </activity>
         <activity android:name=".CreateAccountActivity" />
-        <activity android:name=".CreateProfileActivity"></activity>
+        <activity android:name=".CreateProfileActivity" />
         <activity android:name=".SettingsActivity" />
-        <activity android:name=".DescriptionActivity"></activity>
+        <activity android:name=".DescriptionActivity" />
+        <activity
+            android:name=".PreferencesActivity"
+            android:label="@string/title_activity_preferences"></activity>
     </application>
 
 </manifest>

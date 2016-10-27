@@ -19,6 +19,7 @@ import android.widget.Toast;
 public class HomeFragment extends Fragment {
 
     private ImageButton dogImageButton;
+    private TextView nameTextView;
 
     @Nullable
     @Override
@@ -27,6 +28,7 @@ public class HomeFragment extends Fragment {
         View layout = inflater.inflate(R.layout.home_fragment, container, false);
 
         dogImageButton = (ImageButton) layout.findViewById(R.id.dogImageButton);
+        nameTextView = (TextView) layout.findViewById(R.id.nameTextView);
 
         dogImageButton.setOnClickListener(new View.OnClickListener() {
 
@@ -38,7 +40,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        double[] phoneLocation = ((HomePage) getActivity()).userLocation;
+        nameTextView.append(" " + phoneLocation[0]);
+        nameTextView.append(" " + phoneLocation[1]);
+
         return layout;
     }
-
 }
