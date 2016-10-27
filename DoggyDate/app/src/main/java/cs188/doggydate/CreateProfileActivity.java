@@ -17,7 +17,10 @@ public class CreateProfileActivity extends AppCompatActivity {
 
         finished_button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                boolean userHasAccount = true;
+                //EditText etLocation = (EditText) findViewById(R.id.et_location);
                 Intent intent = new Intent(CreateProfileActivity.this, HomePage.class);
+                //intent.putExtra("location", etLocation.getText().toString());
                 startActivity(intent);
             }
         });
