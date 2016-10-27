@@ -34,6 +34,7 @@ public class LogInFragment extends Fragment {
                 startActivity(intent);
             }
         });
-
     return layout;
-}}
+
+    }
+}

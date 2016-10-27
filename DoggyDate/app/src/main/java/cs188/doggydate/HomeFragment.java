@@ -1,6 +1,8 @@
 package cs188.doggydate;
 
 import android.content.Intent;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -8,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 /**
@@ -16,6 +19,7 @@ import android.widget.Toast;
 public class HomeFragment extends Fragment {
 
     private ImageButton dogImageButton;
+    private TextView nameTextView;
 
     @Nullable
     @Override
@@ -23,7 +27,8 @@ public class HomeFragment extends Fragment {
 
         View layout = inflater.inflate(R.layout.home_fragment, container, false);
 
-        ImageButton dogImageButton = (ImageButton) layout.findViewById(R.id.dogImageButton);
+        dogImageButton = (ImageButton) layout.findViewById(R.id.dogImageButton);
+        nameTextView = (TextView) layout.findViewById(R.id.nameTextView);
 
         dogImageButton.setOnClickListener(new View.OnClickListener() {
 
@@ -35,7 +40,10 @@ public class HomeFragment extends Fragment {
             }
         });
 
+        double[] phoneLocation = ((HomePage) getActivity()).userLocation;
+        nameTextView.append(" " + phoneLocation[0]);
+        nameTextView.append(" " + phoneLocation[1]);
+
         return layout;
     }
-
 }
