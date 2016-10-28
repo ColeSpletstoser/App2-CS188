@@ -53,6 +53,8 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
         viewPager.addOnPageChangeListener(new TabLayout.TabLayoutOnPageChangeListener(tabLayout));
 
+        viewPager.setCurrentItem(1, false); //should start on the homefragment instead of profile
+
         tabLayout.setTabsFromPagerAdapter(adapter);
 
         Log.v("hi", "hi");
@@ -97,8 +99,6 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
                 return;
             }
-        }else{
-            getLocation();
         }
 
         getLocation();
@@ -106,17 +106,21 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
+        switch (requestCode) {
             case 10:
-                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     getLocation();
+                else{
+                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                    startActivity(intent);
+                } // might have to get rid of
                 return;
         }
     }
 
     private void getLocation() {
         Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(
-                mGoogleApiClient);
+                mGoogleApiClient); //don't worry about red line... already wrapped in permission check
         if (mLastLocation != null) {
             userLocation[0] = mLastLocation.getLatitude();
             userLocation[1] = mLastLocation.getLongitude();
