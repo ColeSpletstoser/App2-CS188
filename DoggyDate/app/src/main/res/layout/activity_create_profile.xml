@@ -10,17 +10,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="cs188.doggydate.CreateProfileActivity">
 
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Dog Name"
-        android:ems="10"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="53dp"
-        android:id="@+id/dog_name" />
-
     <Button
         android:text="Done"
         android:layout_width="wrap_content"
@@ -30,24 +19,24 @@
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true" />
 
+    <EditText
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/owner_info"
+        android:text="Owner Description"
+        android:layout_below="@+id/owner_name"
+        android:layout_alignStart="@+id/owner_name" />
+
     <Button
         android:text="Upload Owner Photo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/owner_photo_upload"
-        android:layout_marginBottom="15dp"
-        android:layout_above="@+id/finished_button"
+        android:layout_marginBottom="34dp"
+        android:layout_alignBottom="@+id/finished_button"
         android:layout_centerHorizontal="true" />
-
-    <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:text="Owner Name"
-        android:ems="10"
-        android:id="@+id/owner_name"
-        android:layout_centerVertical="true"
-        android:layout_alignStart="@+id/dog_name" />
 
     <Button
         android:text="Upload Dog Photo"
@@ -55,25 +44,81 @@
         android:layout_height="wrap_content"
         android:id="@+id/dog_photo_upload"
         android:layout_above="@+id/owner_name"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="86dp" />
+
+    <TextView
+        android:text="Owner Name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3"
+        android:layout_marginBottom="73dp"
+        android:layout_above="@+id/owner_photo_upload"
+        android:layout_alignStart="@+id/dog_name"
+        android:textSize="18dp"/>
 
     <EditText
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
+        android:inputType="textPersonName"
+        android:text="Owner Name"
         android:ems="10"
-        android:layout_below="@+id/dog_name"
-        android:id="@+id/dog_info"
-        android:text="Dog Description" />
+        android:id="@+id/owner_name"
+        android:layout_alignTop="@+id/textView3"
+        android:layout_alignParentEnd="true"
+        android:layout_width="250dp" />
 
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:inputType="textMultiLine"
-        android:ems="10"
-        android:layout_below="@+id/owner_name"
-        android:id="@+id/owner_info"
+    <TextView
         android:text="Owner Description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4"
+        android:layout_below="@+id/owner_name"
+        android:textSize="18dp"/>
+
+    <TextView
+        android:text="Dog Name:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/dog_name"
+        android:layout_marginTop="39dp"
+        android:textSize="18dp"
+        android:layout_alignParentTop="true"
+        android:layout_toStartOf="@+id/dog_name_input" />
+
+    <TextView
+        android:text="Dog Description:"
+        android:layout_height="wrap_content"
+        android:id="@+id/dog_description"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="18dp"
+        android:layout_below="@+id/dog_name_input"
+        android:layout_alignStart="@+id/dog_name" />
+
+    <EditText
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Dog Name"
+        android:ems="10"
+        android:id="@+id/dog_name_input"
+        android:layout_width="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_alignBaseline="@+id/dog_name"
+        android:layout_alignBottom="@+id/dog_name"
         android:layout_alignParentEnd="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textMultiLine"
+        android:ems="10"
+        android:id="@+id/dog_info"
+        android:text="Dog Description"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@+id/dog_description"
+        android:layout_alignStart="@+id/dog_name" />
 
 </RelativeLayout>
