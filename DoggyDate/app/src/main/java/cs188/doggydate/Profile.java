@@ -1,10 +1,12 @@
 package cs188.doggydate;
 
+import java.io.Serializable;
+
 /**
  * Created by Spletz on 10/28/16.
  */
 
-public class Profile {
+public class Profile implements Serializable{
     private String dogName;
     private String dogBreed;
     private char dogGender;

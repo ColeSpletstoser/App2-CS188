@@ -13,6 +13,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.io.Serializable;
+
 /**
  * Created by Spletz on 10/20/16.
  */
@@ -30,19 +32,24 @@ public class HomeFragment extends Fragment {
         dogImageButton = (ImageButton) layout.findViewById(R.id.dogImageButton);
         nameTextView = (TextView) layout.findViewById(R.id.nameTextView);
 
+        final Profile profile1 = new Profile("Bone", "Lab", 'M', "Super cute. Good with other dogs.", "Dog Pic", "Joe", "I'm a cool person", "Owner Pic");
+
+        nameTextView.setText(profile1.getDogName());
+
         dogImageButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
 
                 Intent intent = new Intent(getActivity(), DescriptionActivity.class);
+                intent.putExtra("Profile", profile1);
                 startActivity(intent);
             }
         });
 
-        double[] phoneLocation = ((HomePage) getActivity()).userLocation;
-        nameTextView.append(" " + phoneLocation[0]);
-        nameTextView.append(" " + phoneLocation[1]);
+//        double[] phoneLocation = ((HomePage) getActivity()).userLocation;
+//        nameTextView.append(" " + phoneLocation[0]);
+//        nameTextView.append(" " + phoneLocation[1]);
 
         return layout;
     }
