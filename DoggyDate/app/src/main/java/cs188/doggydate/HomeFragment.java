@@ -11,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,7 +25,7 @@ public class HomeFragment extends Fragment {
     private Profile currProfile;
     private int index = 0;
 
-    private ImageButton dogImageButton;
+    private ImageView dogImageButton;
     private TextView nameTextView;
     private Button passButton;
 
@@ -34,7 +35,7 @@ public class HomeFragment extends Fragment {
 
         View layout = inflater.inflate(R.layout.home_fragment, container, false);
 
-        dogImageButton = (ImageButton) layout.findViewById(R.id.dogImageButton);
+        dogImageButton = (ImageView) layout.findViewById(R.id.dogImageButton);
         nameTextView = (TextView) layout.findViewById(R.id.nameTextView);
         passButton = (Button) layout.findViewById(R.id.passButton);
 

@@ -13,7 +13,7 @@
         android:layout_marginTop="55dp">
 
 
-        <ImageButton
+        <ImageView
             app:srcCompat="?attr/selectableItemBackground"
             android:id="@+id/dogImageButton"
             android:layout_width="350dp"
