@@ -11,13 +11,13 @@ public class Profile implements Serializable{
     private String dogBreed;
     private char dogGender;
     private String dogDescription;
-    private String dogPicture;
+    private int dogPicture;
 
     private String ownerName;
     private String ownerDescription;
-    private String ownerPicture;
+    private int ownerPicture;
 
-    public Profile(String dName, String dBreed, char dGender, String dDescription, String dPic, String oName, String oDescription, String oPic){
+    public Profile(String dName, String dBreed, char dGender, String dDescription, int dPic, String oName, String oDescription, int oPic){
         dogName = dName;
         dogBreed = dBreed;
         dogGender = dGender;
@@ -44,7 +44,7 @@ public class Profile implements Serializable{
         return dogDescription;
     }
 
-    public String getDogPicture(){
+    public int getDogPicture(){
         return dogPicture;
     }
 
@@ -56,7 +56,7 @@ public class Profile implements Serializable{
         return ownerDescription;
     }
 
-    public String getOwnerPicture(){
+    public int getOwnerPicture(){
         return ownerPicture;
     }
 }
