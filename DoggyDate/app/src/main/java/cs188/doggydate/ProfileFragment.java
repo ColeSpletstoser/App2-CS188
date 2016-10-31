@@ -39,7 +39,6 @@ import static cs188.doggydate.R.layout.profile_fragment;
  * This is an unfortunate result of mismashed/unfinished code and I could not figure out how to fix it.
  */
 
-
 public class ProfileFragment extends Fragment {
 
 
