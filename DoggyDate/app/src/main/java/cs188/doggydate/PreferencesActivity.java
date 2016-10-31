@@ -34,6 +34,11 @@ import java.util.List;
  * Android Design: Settings</a> for design guidelines and the <a
  * href="http://developer.android.com/guide/topics/ui/settings.html">Settings
  * API Guide</a> for more information on developing a Settings UI.
+ *
+ * True:
+ *  Obviously, this is an android template with a lot more code in it than I actually needed. I couldn't figure
+ *  out how to trim down this file without breaking the code, so I just hid the extraneous stuff in the xml layout
+ *  for the settings. Hopefully that's okay.
  */
 public class PreferencesActivity extends AppCompatPreferenceActivity {
     /**

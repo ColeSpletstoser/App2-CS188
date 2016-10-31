@@ -3,6 +3,7 @@ package cs188.doggydate;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.support.annotation.Nullable;
@@ -23,6 +24,9 @@ import static cs188.doggydate.R.layout.profile_fragment;
 /**
  * Created by Spletz on 10/20/16.
  * edited by True 10/22/16
+ * written entirely by True
+ *
+ * Important: the profile won't update after being edited in PreferencesActivity until you switch pages in the viewPager.
  */
 
 
@@ -37,6 +41,7 @@ public class ProfileFragment extends Fragment  {
         ImageButton btn1 = (ImageButton) view.findViewById(R.id.settingsButton);
 
         TextView dogInfo = (TextView) view.findViewById(R.id.dogInfo);
+
         TextView dogBree = (TextView) view.findViewById(R.id.dogBreed);
         TextView dogDesc = (TextView) view.findViewById(R.id.dogDescription);
         TextView dogGen = (TextView) view.findViewById(R.id.dogGender);
@@ -70,6 +75,8 @@ public class ProfileFragment extends Fragment  {
         ownInfo.setText(ownName);
         ownDesc.setText(ownDescrip);
 
+
+        //button for the settings stuff
         btn1.setOnClickListener(new View.OnClickListener() {
 
             @Override

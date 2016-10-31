@@ -8,30 +8,49 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="339dp"
-        android:layout_marginTop="55dp">
+        android:layout_marginTop="55dp"
+        android:layout_marginLeft="20dp">
 
         <ImageButton
-            android:layout_width="25dp"
-            android:layout_height="25dp"
-            app:srcCompat="@android:drawable/ic_menu_preferences"
+            android:layout_height="30dp"
             android:id="@+id/settingsButton"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
-            android:background="@android:drawable/ic_menu_preferences" />
+            android:layout_marginLeft="7dp"
+            android:layout_marginTop="15dp"
+            android:src="@drawable/settings"
+            android:background="@android:color/transparent"
+            android:layout_width="30dp"
+            android:scaleType="fitCenter"
+            app:srcCompat="@drawable/settings" />
 
 
 
-        <ImageView
-            app:srcCompat="@drawable/shiba"
-            android:id="@+id/dogImage"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_marginLeft="55dp"
-            android:layout_marginRight="50dp"
-            android:adjustViewBounds="true"
-            android:layout_alignBottom="@+id/ownerImage"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="50dp" />
+        <FrameLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                app:srcCompat="@drawable/shiba"
+                android:id="@+id/dogImage"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:layout_marginLeft="55dp"
+                android:layout_marginRight="50dp"
+                android:adjustViewBounds="true"
+                android:layout_alignBottom="@+id/ownerImage"
+                android:layout_alignParentStart="true"
+                android:layout_marginTop="50dp"
+                android:padding="6dp" />
+
+            <ImageView
+                android:src="@drawable/frame"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
+                android:id="@+id/dogFrame"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="50dp"
+                android:layout_marginRight="50dp"/>
+
+        </FrameLayout>
 
 
         <FrameLayout
@@ -48,7 +67,7 @@
                 android:layout_marginTop="220dp" />
 
             <ImageView
-                android:src="@drawable/frame"
+                android:src="@drawable/whiteframe"
                 android:layout_width="100dp"
                 android:layout_height="100dp"
                 android:id="@+id/fakeframe"
@@ -77,29 +96,83 @@
                 android:layout_marginLeft="30dp"
                 android:textSize="32dp" />
 
-            <TextView
-                android:text="Dog Breed"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/dogBreed"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="50dp" />
+            <View
+                android:layout_height="1.25dp"
+                android:background="#2f5135"
+                android:layout_marginLeft="28dp"
+                android:layout_width="250dp" />
 
-            <TextView
-                android:text="Dog Gender"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:id="@+id/dogGender"
-                android:layout_marginTop="10dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
 
-            <TextView
-                android:text="Dog Description"
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/pawprint"
+                    android:id="@+id/imageView"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:text="Dog Breed"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/dogBreed"
+                    android:layout_marginTop="7dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:id="@+id/dogDescription"
-                android:layout_marginTop="10dp" />
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/pawprint"
+                    android:id="@+id/imageView2"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:text="Dog Gender"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/dogGender"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/pawprint"
+                    android:id="@+id/imageView3"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:text="Dog Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/dogDescription"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
 
             <TextView
                 android:text="Owner Name"
@@ -111,13 +184,60 @@
                 android:layout_marginLeft="30dp"
                 android:textSize="32dp" />
 
-            <TextView
-                android:text="Owner Description"
+            <View
+                android:layout_width="250dp"
+                android:layout_height="1.25dp"
+                android:background="#2f5135"
+                android:layout_marginLeft="28dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="50dp"
-                android:id="@+id/ownerDescription"
-                android:layout_marginBottom="25dp" />
+                android:layout_height="match_parent"
+                android:layout_marginTop="5dp">
+
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    app:srcCompat="@drawable/pawprint"
+                    android:id="@+id/imageView4"
+                    android:layout_marginLeft="20dp"
+                    android:scaleType="fitCenter" />
+
+                <TextView
+                    android:text="Owner Description"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:id="@+id/ownerDescription"
+                    android:layout_marginBottom="25dp"
+                    android:layout_marginTop="7dp"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="10dp"
+                android:layout_marginTop="10dp">
+
+                <Button
+                    android:text="Modify Your Dog's Picture!"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uploadDog"
+                    android:layout_weight="1"
+                    android:elevation="19dp" />
+
+                <Button
+                    android:text="Modify your own picture!"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/uploadOwner"
+                    android:layout_weight="1" />
+            </LinearLayout>
+
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>
