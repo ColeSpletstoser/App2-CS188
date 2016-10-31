@@ -67,9 +67,9 @@ public class HomeFragment extends Fragment {
 
         final Profile profile1 = new Profile("Bone", "Lab", 'M', "Super cute. Good with other dogs.", R.drawable.dog1, "Joe", "I'm a cool person", R.drawable.person1, 41.64, -93.47);
         final Profile profile2 = new Profile ("Barker", "Yorkie", 'F', "Terrible dog.", R.drawable.dog2, "Dave", "Hi! I'm all right.", R.drawable.person2, 41.645, -93.475);
-        final Profile profile3 = new Profile ("Lexie", "Mutt", 'F', "My best friend! Doesn't play the best with kids, but gets along with anyone else.", R.drawable.dog3, "Billy", "Because anything worth doing is uncomfortable.", R.drawable.person3, 41.645, -93.475);
-        final Profile profile4 = new Profile ("Bartholomew", "Mutt", 'M', "Stellar with literally anyone, needs the fresh air.", R.drawable.dog4, "Jim", "You miss 100% of the shots you don't take.", R.drawable.person4, 41.645, -93.475);
-        final Profile profile5 = new Profile ("Mister Bear", "Purebred", 'M', "Hopefully he'll find a friend. He's shy, but opens up eventually.", R.drawable.dog5, "Seth", "What's up? Let's meet each other's dogs!", R.drawable.person5, 41.645, -93.475);
+        final Profile profile3 = new Profile ("Lexie", "Mutt", 'F', "My best friend! Doesn't play the best with kids, but gets along with anyone else.", R.drawable.dog3, "Billy", "Because anything worth doing is uncomfortable.", R.drawable.person3, 41.65, -93.48);
+        final Profile profile4 = new Profile ("Bartholomew", "Mutt", 'M', "Stellar with literally anyone, needs the fresh air.", R.drawable.dog4, "Jim", "You miss 100% of the shots you don't take.", R.drawable.person4, 41.65, -93.473);
+        final Profile profile5 = new Profile ("Mister Bear", "Purebred", 'M', "Hopefully he'll find a friend. He's shy, but opens up eventually.", R.drawable.dog5, "Seth", "What's up? Let's meet each other's dogs!", R.drawable.person5, 41.638, -93.47);
 
         final Profile[] profiles = {profile1, profile2, profile3, profile4, profile5};
 
