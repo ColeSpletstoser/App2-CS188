@@ -72,7 +72,7 @@ public class HomeFragment extends Fragment {
 
 
 
-        final Profile[] profiles = {profile1, profile2};
+        final Profile[] profiles = {profile1, profile2, profile3, profile4, profile5};
 
         locationButton.setOnClickListener(new View.OnClickListener() {
             @Override
