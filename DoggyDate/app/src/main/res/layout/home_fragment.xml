@@ -15,7 +15,7 @@
 
         <ImageView
             app:srcCompat="?attr/selectableItemBackground"
-            android:id="@+id/dogImageButton"
+            android:id="@+id/dogImageView"
             android:layout_width="350dp"
             android:layout_height="350dp"
             android:layout_marginLeft="20dp"

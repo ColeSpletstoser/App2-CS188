@@ -43,6 +43,16 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
+        // Create an instance of GoogleAPIClient.
+        if (mGoogleApiClient == null) {
+            Log.v("hi", "hi2");
+            mGoogleApiClient = new GoogleApiClient.Builder(this)
+                    .addConnectionCallbacks(this)
+                    .addOnConnectionFailedListener(this)
+                    .addApi(LocationServices.API)
+                    .build();
+        }
+
         CustomAdapter adapter = new CustomAdapter(getSupportFragmentManager(), getApplicationContext());
 
         viewPager = (ViewPager) findViewById(R.id.viewPager);
@@ -58,16 +68,6 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
         tabLayout.setTabsFromPagerAdapter(adapter);
 
         Log.v("hi", "hi");
-
-        // Create an instance of GoogleAPIClient.
-        if (mGoogleApiClient == null) {
-            Log.v("hi", "hi2");
-            mGoogleApiClient = new GoogleApiClient.Builder(this)
-                    .addConnectionCallbacks(this)
-                    .addOnConnectionFailedListener(this)
-                    .addApi(LocationServices.API)
-                    .build();
-        }
     }
 
     @Override
@@ -87,7 +87,7 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
         Log.v("hi", "hi3");
 
-        Toast.makeText(this, "HI", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "HI", Toast.LENGTH_SHORT).show();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -99,9 +99,9 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
                 return;
             }
+        }else{
+            getLocation();
         }
-
-        getLocation();
     }
 
     @Override
@@ -110,10 +110,6 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
             case 10:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     getLocation();
-                else{
-                    Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                    startActivity(intent);
-                } // might have to get rid of
                 return;
         }
     }
@@ -123,9 +119,12 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
                 mGoogleApiClient); //don't worry about red line... already wrapped in permission check
         if (mLastLocation != null) {
             userLocation[0] = mLastLocation.getLatitude();
+            //userLocation[0] = 100;
             userLocation[1] = mLastLocation.getLongitude();
         }
 
+        userLocation[0] = 42;
+        userLocation[1] = 94;
         Toast.makeText(this, String.valueOf(userLocation[0]), Toast.LENGTH_SHORT).show();
         Toast.makeText(this, String.valueOf(userLocation[1]), Toast.LENGTH_SHORT).show();
     }
@@ -137,7 +136,8 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
-        Log.v("hi", "failed");
+        Intent intent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+        startActivity(intent);
     }
 
     private class CustomAdapter extends FragmentPagerAdapter {

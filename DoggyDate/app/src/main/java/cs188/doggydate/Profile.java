@@ -17,7 +17,10 @@ public class Profile implements Serializable{
     private String ownerDescription;
     private int ownerPicture;
 
-    public Profile(String dName, String dBreed, char dGender, String dDescription, int dPic, String oName, String oDescription, int oPic){
+    private double latitude;
+    private double longitude;
+
+    public Profile(String dName, String dBreed, char dGender, String dDescription, int dPic, String oName, String oDescription, int oPic, double lat, double lon){
         dogName = dName;
         dogBreed = dBreed;
         dogGender = dGender;
@@ -26,6 +29,8 @@ public class Profile implements Serializable{
         ownerName = oName;
         ownerDescription = oDescription;
         ownerPicture = oPic;
+        latitude = lat;
+        longitude = lon;
     }
 
     public String getDogName(){
@@ -58,5 +63,13 @@ public class Profile implements Serializable{
 
     public int getOwnerPicture(){
         return ownerPicture;
+    }
+
+    public double getLatitude(){
+        return latitude;
+    }
+
+    public double getLongitute(){
+        return longitude;
     }
 }
