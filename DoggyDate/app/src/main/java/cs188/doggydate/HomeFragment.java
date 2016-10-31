@@ -35,10 +35,14 @@ public class HomeFragment extends Fragment {
 
     private Profile currProfile;
     private int index = -1;
+    private double[] phoneLocation = {0, 0};
 
     private ImageView dogImageView;
     private TextView nameTextView;
     private Button passButton;
+    private Button inviteButton;
+    private Button locationButton;
+    private TextView promptTextView;
 
     @Nullable
     @Override
@@ -49,23 +53,33 @@ public class HomeFragment extends Fragment {
         dogImageView = (ImageView) layout.findViewById(R.id.dogImageView);
         nameTextView = (TextView) layout.findViewById(R.id.nameTextView);
         passButton = (Button) layout.findViewById(R.id.passButton);
+        inviteButton = (Button) layout.findViewById(R.id.inviteButton);
+        locationButton = (Button) layout.findViewById(R.id.locationButton);
+        promptTextView = (TextView) layout.findViewById(R.id.promptTextView);
 
-        final Profile profile1 = new Profile("Bone", "Lab", 'M', "Super cute. Good with other dogs.", R.drawable.shiba, "Joe", "I'm a cool person", R.drawable.profileimage, 42.1, 94.2);
-        final Profile profile2 = new Profile ("Barker", "Yorkie", 'F', "Terrible dog.", R.drawable.profileimage, "Dave", "Hi! I'm all right.", R.drawable.shiba, 42.1, 94.1);
+        dogImageView.setVisibility(View.GONE);
+        nameTextView.setVisibility(View.GONE);
+        passButton.setVisibility(View.GONE);
+        inviteButton.setVisibility(View.GONE);
+
+
+        final Profile profile1 = new Profile("Bone", "Lab", 'M', "Super cute. Good with other dogs.", R.drawable.shiba, "Joe", "I'm a cool person", R.drawable.profileimage, 41.64, 93.47);
+        final Profile profile2 = new Profile ("Barker", "Yorkie", 'F', "Terrible dog.", R.drawable.profileimage, "Dave", "Hi! I'm all right.", R.drawable.shiba, 41.645, 93.475);
 
         final Profile[] profiles = {profile1, profile2};
 
-        passButton.setText("Start!");
-
-        passButton.setOnClickListener(new View.OnClickListener() {
+        locationButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                phoneLocation = ((HomePage) getActivity()).userLocation;
 
-                passButton.setText("Pass");
+                locationButton.setVisibility(View.GONE);
+                promptTextView.setVisibility(View.GONE);
 
-                double[] phoneLocation = ((HomePage) getActivity()).userLocation;
-                nameTextView.append(" " + phoneLocation[0]);
-                nameTextView.append(" " + phoneLocation[1]);
+                dogImageView.setVisibility(View.VISIBLE);
+                nameTextView.setVisibility(View.VISIBLE);
+                passButton.setVisibility(View.VISIBLE);
+                inviteButton.setVisibility(View.VISIBLE);
 
                 int dist = 26;
                 index = index + 1;
@@ -85,7 +99,33 @@ public class HomeFragment extends Fragment {
                 catch(Exception e){
                     nameTextView.setText("No more profiles near you");
                 }
+            }
+        });
 
+        passButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                phoneLocation = ((HomePage) getActivity()).userLocation;
+
+                int dist = 26;
+                index = index + 1;
+
+                try{
+                    while (dist > 25){
+                        currProfile = profiles[index];
+                        dist = calculateDistance(phoneLocation[0], phoneLocation[1], currProfile.getLatitude(), currProfile.getLongitute());
+                        if (dist >= 25) { // checks if the profile is within 25 miles or else moves on to the next one
+                            index = index + 1;
+                        }
+                    }
+
+                    nameTextView.setText(currProfile.getDogName());
+                    dogImageView.setImageResource(currProfile.getDogPicture());
+                }
+                catch(Exception e){
+                    nameTextView.setText("No more profiles near you");
+                }
             }
         });
 

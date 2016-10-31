@@ -13,6 +13,25 @@
         android:layout_marginTop="55dp">
 
 
+        <Button
+            android:text="Get Current Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/locationButton"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="200dp"/>
+
+        <TextView
+            android:text="Click the button below to view puppies in your area!"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="150dp"
+            android:id="@+id/promptTextView"
+            android:textSize="18sp"
+            android:textAlignment="center"
+            android:textStyle="normal|bold" />
+
         <ImageView
             app:srcCompat="?attr/selectableItemBackground"
             android:id="@+id/dogImageView"
@@ -29,7 +48,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Hunter"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
         android:id="@+id/nameTextView"
