@@ -29,7 +29,6 @@ import static cs188.doggydate.R.layout.profile_fragment;
  * Important: the profile won't update after being edited in PreferencesActivity until you switch pages in the viewPager.
  */
 
-
 public class ProfileFragment extends Fragment  {
 
     @Override
