@@ -63,8 +63,8 @@ public class HomeFragment extends Fragment {
         inviteButton.setVisibility(View.GONE);
 
 
-        final Profile profile1 = new Profile("Bone", "Lab", 'M', "Super cute. Good with other dogs.", R.drawable.shiba, "Joe", "I'm a cool person", R.drawable.profileimage, 41.64, 93.47);
-        final Profile profile2 = new Profile ("Barker", "Yorkie", 'F', "Terrible dog.", R.drawable.profileimage, "Dave", "Hi! I'm all right.", R.drawable.shiba, 41.645, 93.475);
+        final Profile profile1 = new Profile("Bone", "Lab", 'M', "Super cute. Good with other dogs.", R.drawable.shiba, "Joe", "I'm a cool person", R.drawable.profileimage, 41.64, -93.47);
+        final Profile profile2 = new Profile ("Barker", "Yorkie", 'F', "Terrible dog.", R.drawable.profileimage, "Dave", "Hi! I'm all right.", R.drawable.shiba, 41.645, -93.475);
 
         final Profile[] profiles = {profile1, profile2};
 
@@ -97,7 +97,15 @@ public class HomeFragment extends Fragment {
                     dogImageView.setImageResource(currProfile.getDogPicture());
                 }
                 catch(Exception e){
-                    nameTextView.setText("No more profiles near you");
+
+                    dogImageView.setVisibility(View.GONE);
+                    nameTextView.setVisibility(View.GONE);
+                    passButton.setVisibility(View.GONE);
+                    inviteButton.setVisibility(View.GONE);
+
+                    promptTextView.setVisibility(View.VISIBLE);
+
+                    promptTextView.setText("No more puppies near you");
                 }
             }
         });
@@ -124,7 +132,14 @@ public class HomeFragment extends Fragment {
                     dogImageView.setImageResource(currProfile.getDogPicture());
                 }
                 catch(Exception e){
-                    nameTextView.setText("No more profiles near you");
+                    dogImageView.setVisibility(View.GONE);
+                    nameTextView.setVisibility(View.GONE);
+                    passButton.setVisibility(View.GONE);
+                    inviteButton.setVisibility(View.GONE);
+
+                    promptTextView.setVisibility(View.VISIBLE);
+
+                    promptTextView.setText("No more puppies near you");
                 }
             }
         });

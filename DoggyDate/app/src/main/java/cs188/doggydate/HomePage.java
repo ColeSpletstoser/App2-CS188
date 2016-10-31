@@ -69,6 +69,7 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
                     .build();
         }
     }
+
     @Override
     protected void onStart() {
         mGoogleApiClient.connect();
@@ -86,7 +87,7 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
 
         Log.v("hi", "hi3");
 
-        Toast.makeText(this, "HI", Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "HI", Toast.LENGTH_SHORT).show();
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
@@ -97,33 +98,43 @@ public class HomePage extends AppCompatActivity implements GoogleApiClient.Conne
                 }, 10);
 
                 return;
-            }else{
+            } else {
                 getLocation();
             }
-        }else{
+        } else {
             getLocation();
         }
     }
 
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        switch (requestCode){
+        switch (requestCode) {
             case 10:
-                if (grantResults.length>0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED)
                     getLocation();
                 return;
         }
     }
 
     private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
         Location mLastLocation = LocationServices.FusedLocationApi.getLastLocation(mGoogleApiClient);
         if (mLastLocation != null) {
             userLocation[0] = mLastLocation.getLatitude();
             userLocation[1] = mLastLocation.getLongitude();
         }
 
-        Toast.makeText(this, String.valueOf(userLocation[0]), Toast.LENGTH_SHORT).show();
-        Toast.makeText(this, String.valueOf(userLocation[1]), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, String.valueOf(userLocation[0]), Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, String.valueOf(userLocation[1]), Toast.LENGTH_SHORT).show();
     }
 
     @Override
