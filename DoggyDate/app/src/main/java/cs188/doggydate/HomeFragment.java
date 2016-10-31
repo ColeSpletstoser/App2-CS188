@@ -43,7 +43,7 @@ public class HomeFragment extends Fragment {
     private Button inviteButton;
     private Button locationButton;
     private TextView promptTextView;
-    
+
 
     @Nullable
     @Override
